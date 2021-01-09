@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-  - filebeat-playbook.yml
+(https://github.com/zmesdaq/ELK-Stack-Project/blob/main/Ansible/filebeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -24,6 +24,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
 
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
+
 The Load balancer helps distribute traffic evenly across the servers and mitigates DoS attacks. 
 Jump box allows us make changes to multiple servers without having to do them individually and is a more secure way to administer tasks.
 
@@ -32,7 +33,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - What does Metricbeat record? Metricbeat collects metrics from the operating system and outputs them to Elasticsearch or logstash.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function  | IP Address | Operating System |
 |----------|-----------|------------|------------------|
@@ -49,7 +49,8 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - My home IP address
 
 Machines within the network can only be accessed by SSH or HTTP.
-- Which machine did you allow to access your ELK VM? What was its IP address? The ansible container and the Jump box IP address.
+- Which machine did you allow to access your ELK VM? What was its IP address? 
+The ansible container and the Jump box IP address.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -62,7 +63,8 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- What is the main advantage of automating configuration with Ansible? It give IT administrators more time to focus on other important tasks and allows us to install programs all at the same time.
+- What is the main advantage of automating configuration with Ansible? 
+It give IT administrators more time to focus on other important tasks and allows us to install programs all at the same time.
 
 The playbook implements the following tasks:
 - Create and configure the ELK VM
@@ -92,10 +94,13 @@ SSH into the control node and follow the steps below:
 - Update the ansible host file to include the web 1 and web 2 VM
 - Run the  ansible playbook, and navigate to the web interface Kibana to check that the installation worked as expected
 
-Answer the following questions to fill in the blanks:
-- _Which file is the playbook? Where do you copy it? Filebeat-playbook.yml & Metricbeat-playbook.yml and copy it to the /etc ansible file.
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update the Ansible hosts file. IP groups need to be created (webservers and elkserver)
-- _Which URL do you navigate to in order to check that the ELK server is running? ElkVMIP:5601/app/kibana
+- Which file is the playbook? Where do you copy it? 
+Filebeat-playbook.yml & Metricbeat-playbook.yml and copy it to the /etc ansible file.
+- Which file do you update to make Ansible run the playbook on a specific machine? 
+How do I specify which machine to install the ELK server on versus which to install Filebeat on? 
+Update the Ansible hosts file. IP groups need to be created (webservers and elkserver)
+- Which URL do you navigate to in order to check that the ELK server is running? 
+Elk-VM-IP:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+To run to download the playbook, update the files, etc._
 Curl https://du.bootcampcontent.com/denver-coding-bootcamp/du-den-cyber-pt-09-2020-u-c/blob/master/12-Elk-Stack-Project/Activities/Stu_Day_2/Solved/config_files/filebeat-playbook.yml
